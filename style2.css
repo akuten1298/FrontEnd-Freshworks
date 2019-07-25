@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+#all{
+    display: flex;
+}
+
+#all div{
+    flex:1;
+    margin-top: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    width: 300px;
+    height: 250px;
+    transition: 0.3s;
+}
+
+#val1{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+}
+
+#val2{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val3{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val4{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val5{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val6{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val7{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val8{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val9{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 30px;
+    
+}
+
+#val11{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 75px;
+}
+
+#header{
+    font-size: 50px;
+    margin-left: 30%;
+}
+
+#front{
+    align-content: left;
+    text-align: left;
+    justify-content: center;
+}
+

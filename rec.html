@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style2.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+        <title>Front End</title>
+    </head>
+    <body>
+        <div id="front">
+            <button class="fas fa-backward" onclick="back()" style="font-size:70px; margin-left:0px; margin-top: 25px;"><i class="fas fa-backward"></i></button>
+            <p id="header" style="display:inline;" ></p>
+        </div>
+        
+        <div id='all'>
+            <div id='card1' style="background-color:#ff8080">
+                <p id='val11'>Name</p>
+                <p id='val1'></p>
+            </div>
+            <div id='card2' style="background-color:#80aaff;">
+                <p id='val11'>Capital</p>
+                <p id='val7'></p>
+            </div>
+            <div id='card3' style="background-color:#99ffcc;">
+                <p id='val11'>Currency</p>
+                <p id='val3'></p>
+            </div>
+        </div>
+        <div id='all'>
+            <div id='card1' style="background-color:#ff8080">
+                <p id='val11'>Language</p>
+                <p id='val4'></p>
+            </div>
+            <div id='card2' style="background-color:#80aaff;">
+                <p id='val11'>Region</p>
+                <p id='val5'></p>
+            </div>
+            <div id='card3' style="background-color:#99ffcc;">
+                <p id='val11'>Timezones</p>
+                <p id='val6'></p>
+            </div>
+        </div>
+        <div id='all'>
+            <div id='card1' style="background-color:#ff8080">
+                <p id='val11'>Code</p>
+                <p id='val2'></p>
+            </div>
+            <div id='card2' style="background-color:#80aaff;">
+                <p id='val11'>Population</p>
+                <p id='val8'></p>
+            </div>
+            <div id='card3' style="background-color:#99ffcc;">
+                <p id='val11'>Subregion</p>
+                <p id='val9'></p>
+            </div>
+        </div>
+        <script>
+            var queryString = decodeURIComponent(window.location.search);
+            queryString = queryString.substring(1);
+            var queries = queryString.split("?");
+            fetch('https://restcountries.eu/rest/v2/alpha/'+queries)
+            .then(response => response.json())
+            .then(data => {twofunction(data) 
+            })
+            .catch(error => console.error(error)) 
+
+            function twofunction(data){
+
+                document.getElementById('header').innerHTML=data.name;
+                document.getElementById('val1').innerHTML=data.name;
+                document.getElementById('val2').innerHTML=data.alpha3Code;
+                document.getElementById('val3').innerHTML=data.currencies[0].name;
+                document.getElementById('val4').innerHTML=data.languages[0].name;
+                document.getElementById('val5').innerHTML=data.region;
+                document.getElementById('val6').innerHTML=data.timezones[0];
+                document.getElementById('val7').innerHTML=data.capital;
+                document.getElementById('val8').innerHTML=data.population;
+                document.getElementById('val9').innerHTML=data.subregion;
+            }
+
+            function back(){
+                history.back();
+            }
+
+        </script>
+    </body>
+</html>

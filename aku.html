@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+        <title>Front End</title>
+        <h1 id="topheader">Country Explorer</h1>
+    </head>
+    <body>
+        <div class="searchbox">
+            <input id="searchtxts" class="searchtxt" type="text" name="" placeholder="Want to know more..."></input>
+            <a class="searchbtn" href="#" >
+                <button class="fas fa-search" onclick="myFunction()"><i class="fas fa-search"></i></button>
+            </a>
+        </div>
+        <div id="totalContainer"></div>
+        <script>
+            var cnt=0;
+            var f=0;
+            if(!document.getElementById("searchtxts").value)
+            firstTime();
+            else
+            myFunction();
+            function myFunction() {
+                var country=document.getElementById("searchtxts").value;
+                fetch('https://restcountries.eu/rest/v2/name/'+country)
+                .then(response => response.json())
+                .then(data => {twofunction(data) 
+                })
+                .catch(error => console.error(error))  
+            }
+
+            function twofunction(data){
+                var elem = document.getElementById("totalContainer");
+                while (elem.hasChildNodes()) {   
+                    elem.removeChild(elem.firstChild);
+                }
+                for(var i=0;i<data.length;i++)
+                {
+                    var mainDiv = document.createElement("div");
+                    mainDiv.id=data[i].alpha3Code;
+                    var breaks = document.createElement("br");
+                    mainDiv.className='card';
+                    var img = document.createElement("img");
+                    var text = document.createElement("p");
+                    img.className='imageCard';
+                    text.className="container";
+                    text = data[i].name;
+                    img.setAttribute("src",data[i].flag);
+                    document.getElementById("totalContainer").appendChild(mainDiv);
+                    mainDiv.append(img);
+                    mainDiv.append(breaks);
+                    mainDiv.append(text);
+                    mainDiv.setAttribute("onclick","clicked(id)");
+                }
+
+            }
+
+            function clicked(code)
+            {
+                window.location.href = "rec.html?" + code;
+            }
+
+            function firstTime(){
+                var country=document.getElementById("searchtxts").value;
+                fetch('https://restcountries.eu/rest/v2/all')
+                .then(response => response.json())
+                .then(data => {twofunction(data) 
+                })
+                .catch(error => console.error(error))
+            }
+
+        </script>
+    </body>
+</html>
